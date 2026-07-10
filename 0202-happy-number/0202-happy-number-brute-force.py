@@ -6,3 +6,7 @@ class Solution:
             if n ==1:
                 return True
         return False
+    
+# this approach throws TLE
+# because it not handle when squaring number form a digit more than two digits
+# and not handle the edge cases 
