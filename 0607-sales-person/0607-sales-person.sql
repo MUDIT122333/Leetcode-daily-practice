@@ -2,13 +2,14 @@
 select 
 s.name
 from SalesPerson as s
-where s.name not in 
+where s.sales_id not in 
 (
 select 
-    s.name
-from SalesPerson as s 
-left join Orders as o on s.sales_id = o.sales_id 
-left join Company as c on c.com_id = o.com_id 
+    o.sales_id
+from Orders as o 
+join Company as c
+on o.com_id = c.com_id 
+
 where c.name = 'RED') 
 
 
