@@ -9,9 +9,12 @@ class Solution:
                     'D':             500,
                     'M':             1000}
         integer = 0
-        for i in range(len(s)):
+        i=0
+        while i < len(s):
             if i+1 < len(s) and roman_int[s[i]] < roman_int[s[i+1]]:
-                integer -= roman_int[s[i]]
+                integer += roman_int[s[i+1]] - roman_int[s[i]]
+                i+=2
             else:
                 integer += roman_int[s[i]]
+                i+=1
         return integer
