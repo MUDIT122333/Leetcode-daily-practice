@@ -13,12 +13,9 @@ class Solution:
         for i in range(n-1, -1, -1):
             if i+1<=n-1:
                 suffix *= nums[i+1]
-            right[i] = suffix
+            left[i] *= suffix
         
-        result = [1]*n
-        for i in range(n):
-            result[i] = left[i]*right[i]
-        return result
+        return left
 
 
 
